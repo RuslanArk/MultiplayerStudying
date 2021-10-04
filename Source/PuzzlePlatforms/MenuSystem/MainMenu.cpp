@@ -10,6 +10,8 @@
 
 #include "ServerRow.h"
 
+DEFINE_LOG_CATEGORY_STATIC(LogPPMainMenu, All, All);
+
 UMainMenu::UMainMenu(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
@@ -50,8 +52,22 @@ void UMainMenu::HostServer()
 	}
 }
 
+void UMainMenu::SetServerIndex(uint32 Index)
+{
+	ServerIndex = Index;
+}
+
 void UMainMenu::JoinServer()
 {
+	if (ServerIndex.IsSet())
+	{
+		UE_LOG(LogPPMainMenu, Warning, TEXT("Server index is %d"), ServerIndex.GetValue());
+	}
+	else
+	{
+		UE_LOG(LogPPMainMenu, Warning, TEXT("Server index is not set"));
+	}
+	
 	if (MenuInterface != nullptr)
 	{
 		/*if (!ensure(IPAddressField != nullptr)) return;
@@ -77,13 +93,16 @@ void UMainMenu::SetServerList(const TArray<FString> ServerNames)
 	if (!World) return;
 
 	ServerList->ClearChildren();
-	
+
+	uint32 RowIndex = 0;
 	for (const FString& ServerName : ServerNames)
 	{
 		UServerRow* Row = CreateWidget<UServerRow>(World, ServerRowClass);
 		if (!Row) return;
 
 		Row->ServerName->SetText(FText::FromString(ServerName));
+		Row->Setup(this, RowIndex);
+		++RowIndex;
 
 		ServerList->AddChild(Row);
 	}

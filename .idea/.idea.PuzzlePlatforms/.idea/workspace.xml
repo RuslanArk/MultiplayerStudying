@@ -5,24 +5,39 @@
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ffdae1f-e38f-4561-abe2-82ffac265e3c" name="Default Changelist" comment="" />
+    <list default="true" id="3ffdae1f-e38f-4561-abe2-82ffac265e3c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MenuSystem/WBP_ServerRow.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MenuSystem/WBP_ServerRow.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MainMenu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MainMenu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MainMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MainMenu.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/ServerRow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/ServerRow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/ServerRow.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/ServerRow.h" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatforms.Build.cs" />
       <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/ServerRow.h" />
-      <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MainMenu.h" />
       <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MenuInterface.h" />
       <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.h" />
-      <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MainMenu.cpp" />
       <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.cpp" />
+      <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MainMenu.h" />
+      <option value="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MainMenu.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1ycdEJmZg5xHfuV4RxdahMpTFwv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -267,14 +282,29 @@
       <workItem from="1633207137730" duration="744000" />
       <workItem from="1633244944918" duration="5047000" />
       <workItem from="1633251048731" duration="8000" />
+      <workItem from="1633366785347" duration="1035000" />
+      <workItem from="1633370800740" duration="1766000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

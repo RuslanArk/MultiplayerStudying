@@ -21,6 +21,8 @@ public:
 	UMainMenu(const FObjectInitializer& ObjectInitializer);
 
 	void SetServerList(const TArray<FString> ServerNames);
+
+	void SetServerIndex(uint32 Index);
 	
 protected:
 	virtual bool Initialize();
@@ -55,6 +57,8 @@ private:
 
 	UPROPERTY(meta = (BindWidget))
 	UPanelWidget* ServerList;
+
+	TOptional<uint32> ServerIndex;
 
 	UFUNCTION()
 	void HostServer();
