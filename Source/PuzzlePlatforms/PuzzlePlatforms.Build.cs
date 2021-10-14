@@ -16,7 +16,8 @@ public class PuzzlePlatforms : ModuleRules
 			"InputCore", 
 			"HeadMountedDisplay", 
 			"UMG", 
-			"OnlineSubsystem"
+			"OnlineSubsystem",
+			"OnlineSubsystemSteam"
 		});
 	}
 }

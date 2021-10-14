@@ -30,7 +30,7 @@ public:
 	void Host() override;
 
 	UFUNCTION(Exec)
-	void Join(const FString& Address) override;
+	void Join(uint32 InIndex) override;
 
 	void RefreshServerList() override;
 
@@ -40,12 +40,15 @@ private:
 	void OnOnlineSessionCreated(FName SessionName, bool Success);
 	void OnOnlineSessionDestroyed(FName SessionName, bool Success);
 	void OnFindSessionsComplete(bool Success);
+	void OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result);
+	
 	void CreateSession();
 
 private:
 	TSubclassOf<class UUserWidget> MenuClass;
 	TSubclassOf<class UUserWidget> InGameMenuClass;
 
+	UPROPERTY()
 	class UMainMenu* Menu = nullptr;
 
 	IOnlineSessionPtr SessionInterface;

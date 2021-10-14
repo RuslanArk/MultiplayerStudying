@@ -26,6 +26,9 @@ public:
 	UPROPERTY(meta = (BindWidget))
 	UTextBlock* PlayersNum;
 
+	UPROPERTY(BlueprintReadOnly)
+	bool Selected = false;
+
 private:
 	UPROPERTY(meta = (BindWidget))
 	UButton* RowButton;

@@ -55,24 +55,30 @@ void UMainMenu::HostServer()
 void UMainMenu::SetServerIndex(uint32 Index)
 {
 	ServerIndex = Index;
+	UpdateChildren();
+}
+
+void UMainMenu::UpdateChildren()
+{
+	for (int32 i = 0; i < ServerList->GetChildrenCount(); ++i)
+	{
+		UServerRow* Row = Cast<UServerRow>(ServerList->GetChildAt(i));
+		if (Row != nullptr)
+		{
+			Row->Selected = (ServerIndex.IsSet() && ServerIndex.GetValue() == i);
+		}
+	}
 }
 
 void UMainMenu::JoinServer()
 {
-	if (ServerIndex.IsSet())
+	if (ServerIndex.IsSet() && MenuInterface != nullptr)
 	{
-		UE_LOG(LogPPMainMenu, Warning, TEXT("Server index is %d"), ServerIndex.GetValue());
+		MenuInterface->Join(ServerIndex.GetValue());
 	}
 	else
 	{
 		UE_LOG(LogPPMainMenu, Warning, TEXT("Server index is not set"));
-	}
-	
-	if (MenuInterface != nullptr)
-	{
-		/*if (!ensure(IPAddressField != nullptr)) return;
-		const FString& Address = IPAddressField->GetText().ToString();*/
-		MenuInterface->Join(TEXT("Empty String"));		
 	}
 }
 

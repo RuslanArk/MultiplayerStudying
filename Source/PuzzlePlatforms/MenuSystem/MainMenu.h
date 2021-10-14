@@ -66,7 +66,6 @@ private:
 	UFUNCTION()
 	void JoinServer();
 
-
 	UFUNCTION()
 	void OpenJoinMenu();
 
@@ -75,4 +74,6 @@ private:
 
 	UFUNCTION()
 	void QuitPressed();
+
+	void UpdateChildren();
 };
