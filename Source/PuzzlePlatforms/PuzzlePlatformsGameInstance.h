@@ -27,7 +27,7 @@ public:
 	void InGameLoadMenu();
 
 	UFUNCTION(Exec)
-	void Host() override;
+	void Host(FString ServerName) override;
 
 	UFUNCTION(Exec)
 	void Join(uint32 InIndex) override;
@@ -47,6 +47,8 @@ private:
 private:
 	TSubclassOf<class UUserWidget> MenuClass;
 	TSubclassOf<class UUserWidget> InGameMenuClass;
+
+	FString DesiredServerName;
 
 	UPROPERTY()
 	class UMainMenu* Menu = nullptr;

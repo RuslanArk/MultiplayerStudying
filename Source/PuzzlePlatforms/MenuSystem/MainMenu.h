@@ -7,10 +7,22 @@
 #include "MainMenu.generated.h"
 
 class UButton;
+class UEditableTextBox;
 class UPanelWidget;
 class UUserWidget;
 class UWidget;
 class UWidgetSwitcher;
+
+USTRUCT()
+struct FServerData
+{
+	GENERATED_USTRUCT_BODY()
+
+	FString Name;
+	FString HostName;
+	uint16 CurrentPlayers;
+	uint16 MaxPlayers;
+};
 
 UCLASS()
 class PUZZLEPLATFORMS_API UMainMenu : public UMenuWidget
@@ -20,7 +32,7 @@ class PUZZLEPLATFORMS_API UMainMenu : public UMenuWidget
 public:
 	UMainMenu(const FObjectInitializer& ObjectInitializer);
 
-	void SetServerList(const TArray<FString> ServerNames);
+	void SetServerList(const TArray<FServerData> ServerNames);
 
 	void SetServerIndex(uint32 Index);
 	
@@ -57,6 +69,9 @@ private:
 
 	UPROPERTY(meta = (BindWidget))
 	UPanelWidget* ServerList;
+
+	UPROPERTY(meta = (BindWidget))
+	UEditableTextBox* ServerNameField;
 
 	TOptional<uint32> ServerIndex;
 

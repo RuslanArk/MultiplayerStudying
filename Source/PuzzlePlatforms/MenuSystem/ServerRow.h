@@ -24,7 +24,7 @@ public:
 	UTextBlock* HostName;
 
 	UPROPERTY(meta = (BindWidget))
-	UTextBlock* PlayersNum;
+	UTextBlock* ConnectionFraction;
 
 	UPROPERTY(BlueprintReadOnly)
 	bool Selected = false;

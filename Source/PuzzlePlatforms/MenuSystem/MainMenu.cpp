@@ -48,7 +48,7 @@ void UMainMenu::HostServer()
 {
 	if (MenuInterface != nullptr)
 	{
-		MenuInterface->Host();
+		MenuInterface->Host("Hello Host!");
 	}
 }
 
@@ -93,7 +93,7 @@ void UMainMenu::OpenJoinMenu()
 	}
 }
 
-void UMainMenu::SetServerList(const TArray<FString> ServerNames)
+void UMainMenu::SetServerList(const TArray<FServerData> ServerNames)
 {
 	UWorld* World = GetWorld();
 	if (!World) return;
@@ -101,12 +101,15 @@ void UMainMenu::SetServerList(const TArray<FString> ServerNames)
 	ServerList->ClearChildren();
 
 	uint32 RowIndex = 0;
-	for (const FString& ServerName : ServerNames)
+	for (const FServerData& ServerData : ServerNames)
 	{
 		UServerRow* Row = CreateWidget<UServerRow>(World, ServerRowClass);
 		if (!Row) return;
-
-		Row->ServerName->SetText(FText::FromString(ServerName));
+	
+		Row->ServerName->SetText(FText::FromString(ServerData.Name));
+		Row->HostName->SetText(FText::FromString(ServerData.HostName));
+		Row->ConnectionFraction->SetText(FText::FromString(	//
+			FString::Printf(TEXT("%d / %d"), ServerData.CurrentPlayers, ServerData.MaxPlayers)));
 		Row->Setup(this, RowIndex);
 		++RowIndex;
 
