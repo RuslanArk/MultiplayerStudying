@@ -59,6 +59,12 @@ private:
 	UButton* ConfirmJoinMenuButton;
 
 	UPROPERTY(meta = (BindWidget))
+	UButton* ConfirmHostMenuButton;
+
+	UPROPERTY(meta = (BindWidget))
+	UButton* CancelHostMenuButton;
+
+	UPROPERTY(meta = (BindWidget))
 	UWidgetSwitcher* MenuSwitcher;
 
 	UPROPERTY(meta = (BindWidget))
@@ -66,6 +72,9 @@ private:
 
 	UPROPERTY(meta = (BindWidget))
 	UWidget* JoinMenu;
+
+	UPROPERTY(meta = (BindWidget))
+	UWidget* HostMenu;
 
 	UPROPERTY(meta = (BindWidget))
 	UPanelWidget* ServerList;
@@ -82,10 +91,13 @@ private:
 	void JoinServer();
 
 	UFUNCTION()
+	void OpenMainMenu();
+
+	UFUNCTION()
 	void OpenJoinMenu();
 
 	UFUNCTION()
-	void OpenMainMenu();
+	void OpenHostMenu();
 
 	UFUNCTION()
 	void QuitPressed();

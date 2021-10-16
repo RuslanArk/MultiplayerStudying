@@ -27,7 +27,7 @@ bool UMainMenu::Initialize()
 	if (!Success) return false;
 	
 	if (!ensure(HostButton != nullptr)) return false;
-	HostButton->OnClicked.AddDynamic(this, &UMainMenu::HostServer);
+	HostButton->OnClicked.AddDynamic(this, &UMainMenu::OpenHostMenu);
 
 	if (!ensure(JoinButton != nullptr)) return false;
 	JoinButton->OnClicked.AddDynamic(this, &UMainMenu::OpenJoinMenu);
@@ -41,6 +41,12 @@ bool UMainMenu::Initialize()
 	if (!ensure(ConfirmJoinMenuButton != nullptr)) return false;
 	ConfirmJoinMenuButton->OnClicked.AddDynamic(this, &UMainMenu::JoinServer);
 
+	if (!ConfirmHostMenuButton) return false;
+	ConfirmHostMenuButton->OnClicked.AddDynamic(this, &UMainMenu::HostServer);
+	
+	if (!CancelHostMenuButton) return false;
+	CancelHostMenuButton->OnClicked.AddDynamic(this, &UMainMenu::OpenMainMenu);
+
 	return true;
 }
 
@@ -48,7 +54,8 @@ void UMainMenu::HostServer()
 {
 	if (MenuInterface != nullptr)
 	{
-		MenuInterface->Host("Hello Host!");
+		FString ServerName = ServerNameField->Text.ToString();
+		MenuInterface->Host(ServerName);
 	}
 }
 
@@ -91,6 +98,11 @@ void UMainMenu::OpenJoinMenu()
 	{
 		MenuInterface->RefreshServerList();
 	}
+}
+
+void UMainMenu::OpenHostMenu()
+{
+	MenuSwitcher->SetActiveWidget(HostMenu);
 }
 
 void UMainMenu::SetServerList(const TArray<FServerData> ServerNames)
