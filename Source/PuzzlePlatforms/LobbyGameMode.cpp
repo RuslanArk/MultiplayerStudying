@@ -13,7 +13,11 @@ void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
 
 	if (NumberOfPlayers >= 3)
 	{
-		UE_LOG(LogLobbyGameMode, Warning, TEXT("Number of players reached MAX"));
+		UWorld* World = GetWorld();
+		if (!World) return;
+
+		bUseSeamlessTravel = true;
+		World->ServerTravel("/Game/PuzzlePlatforms/Maps/MainLevel?listen");
 	}
 }
 
