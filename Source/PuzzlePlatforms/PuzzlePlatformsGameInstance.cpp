@@ -14,7 +14,7 @@
 
 DEFINE_LOG_CATEGORY_STATIC(LogPPGameInstance, All, All);
 
-const static FName SESSION_NAME = TEXT("My session name");
+//const static FName SESSION_NAME = TEXT("My session name");
 const static FName SERVER_NAME_KEY = TEXT("SessionName");
 
 UPuzzlePlatformsGameInstance::UPuzzlePlatformsGameInstance(const FObjectInitializer & ObjectInitializer)
@@ -82,10 +82,10 @@ void UPuzzlePlatformsGameInstance::Host(FString ServerName)
 	DesiredServerName = ServerName;
 	if (SessionInterface.IsValid())
 	{
-		auto ExistingSession = SessionInterface->GetNamedSession(SESSION_NAME);
+		auto ExistingSession = SessionInterface->GetNamedSession(NAME_GameSession);
 		if (ExistingSession != nullptr)
 		{
-			SessionInterface->DestroySession(SESSION_NAME);
+			SessionInterface->DestroySession(NAME_GameSession);
 		}
 		else
 		{
@@ -104,7 +104,7 @@ void UPuzzlePlatformsGameInstance::Join(uint32 InIndex)
 		Menu->Teardown();
 	}
 
-	SessionInterface->JoinSession(0, SESSION_NAME, SessionSearch->SearchResults[InIndex]);
+	SessionInterface->JoinSession(0, NAME_GameSession, SessionSearch->SearchResults[InIndex]);
 	
 }
 
@@ -233,6 +233,6 @@ void UPuzzlePlatformsGameInstance::CreateSession()
 		SessionSettings.bUsesPresence = true;
 		SessionSettings.Set(SERVER_NAME_KEY, DesiredServerName, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
 		
-		SessionInterface->CreateSession(0, SESSION_NAME, SessionSettings);
+		SessionInterface->CreateSession(0, NAME_GameSession, SessionSettings);
 	}
 }
