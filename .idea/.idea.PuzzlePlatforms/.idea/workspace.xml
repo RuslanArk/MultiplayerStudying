@@ -7,7 +7,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3ffdae1f-e38f-4561-abe2-82ffac265e3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/LobbyGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/LobbyGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/LobbyGameMode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/LobbyGameMode.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,6 +301,7 @@
       <workItem from="1634392085059" duration="1938000" />
       <workItem from="1634580907574" duration="1500000" />
       <workItem from="1634664940357" duration="2171000" />
+      <workItem from="1634922693400" duration="1538000" />
     </task>
     <servers />
   </component>

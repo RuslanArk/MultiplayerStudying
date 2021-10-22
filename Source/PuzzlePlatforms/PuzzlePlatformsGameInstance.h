@@ -32,6 +32,9 @@ public:
 	UFUNCTION(Exec)
 	void Join(uint32 InIndex) override;
 
+	UFUNCTION()
+	void StartSession();
+
 	void RefreshServerList() override;
 
 	virtual void LoadMainMenu() override;

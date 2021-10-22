@@ -3,6 +3,8 @@
 
 #include "LobbyGameMode.h"
 
+#include "PuzzlePlatformsGameInstance.h"
+
 DEFINE_LOG_CATEGORY_STATIC(LogLobbyGameMode, All, All);
 
 void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
@@ -13,11 +15,7 @@ void ALobbyGameMode::PostLogin(APlayerController* NewPlayer)
 
 	if (NumberOfPlayers >= 3)
 	{
-		UWorld* World = GetWorld();
-		if (!World) return;
-
-		bUseSeamlessTravel = true;
-		World->ServerTravel("/Game/PuzzlePlatforms/Maps/MainLevel?listen");
+		GetWorldTimerManager().SetTimer(ServerTravelTimer, this, &ALobbyGameMode::StartGame, 10.0f);		
 	}
 }
 
@@ -26,4 +24,20 @@ void ALobbyGameMode::Logout(AController* Exiting)
 	Super::Logout(Exiting);
 
 	--NumberOfPlayers;
+}
+
+void ALobbyGameMode::StartGame()
+{
+	UPuzzlePlatformsGameInstance* GameInstance = Cast<UPuzzlePlatformsGameInstance>(GetGameInstance());
+	if (!GameInstance) return;
+
+	GameInstance->StartSession();
+	
+	UWorld* World = GetWorld();
+	if (!World) return;
+
+	bUseSeamlessTravel = true;
+
+		
+	World->ServerTravel("/Game/PuzzlePlatforms/Maps/MainLevel?listen");
 }
