@@ -51,6 +51,11 @@ void UPuzzlePlatformsGameInstance::Init()
 		UE_LOG(LogPPGameInstance, Warning, TEXT("Found no Online Subsystem"));
 	}
 	UE_LOG(LogTemp, Warning, TEXT("Found class %s"), *MenuClass->GetName());
+
+	if (GEngine != nullptr)
+	{
+		GEngine->OnNetworkFailure().AddUObject(this, &UPuzzlePlatformsGameInstance::OnNetworkFailure);
+	}
 }
 
 void UPuzzlePlatformsGameInstance::LoadMenuWidget()
@@ -141,7 +146,7 @@ void UPuzzlePlatformsGameInstance::OnJoinSessionComplete(FName SessionName, EOnJ
 void UPuzzlePlatformsGameInstance::LoadMainMenu()
 {
 	APlayerController* PlayerController = GetFirstLocalPlayerController();
-	if (!ensure(PlayerController != nullptr)) return;
+	if (!PlayerController) return;
 
 	PlayerController->ClientTravel("/Game/MenuSystem/MainMenu", ETravelType::TRAVEL_Absolute);
 }
@@ -221,6 +226,11 @@ void UPuzzlePlatformsGameInstance::OnFindSessionsComplete(bool Success)
 		}
 		Menu->SetServerList(ServerNames);
 	}
+}
+
+void UPuzzlePlatformsGameInstance::OnNetworkFailure(UWorld* World, UNetDriver* NetDriver, ENetworkFailure::Type FailureType, const FString& ErrorString = TEXT("Error in network Driver"))
+{
+	LoadMainMenu();
 }
 
 void UPuzzlePlatformsGameInstance::CreateSession()
