@@ -7,8 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3ffdae1f-e38f-4561-abe2-82ffac265e3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PuzzlePlatforms/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/PuzzlePlatformsGameInstance.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MenuSystem/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MenuSystem/WBP_MainMenu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/LobbyGameMode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/LobbyGameMode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MenuWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/PuzzlePlatforms/MenuSystem/MenuWidget.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -301,6 +302,16 @@
       <workItem from="1634664940357" duration="2171000" />
       <workItem from="1634922693400" duration="1538000" />
       <workItem from="1635180373815" duration="1139000" />
+      <workItem from="1637089731979" duration="1255000" />
+      <workItem from="1637172479431" duration="2669000" />
+      <workItem from="1637261490068" duration="694000" />
+      <workItem from="1637264894186" duration="1000" />
+      <workItem from="1637347208462" duration="3100000" />
+      <workItem from="1637406381512" duration="6606000" />
+      <workItem from="1637606119807" duration="791000" />
+      <workItem from="1637606941025" duration="629000" />
+      <workItem from="1638257612969" duration="594000" />
+      <workItem from="1638258873166" duration="750000" />
     </task>
     <servers />
   </component>

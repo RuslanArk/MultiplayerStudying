@@ -37,7 +37,6 @@ void ALobbyGameMode::StartGame()
 	if (!World) return;
 
 	bUseSeamlessTravel = true;
-
 		
 	World->ServerTravel("/Game/PuzzlePlatforms/Maps/MainLevel?listen");
 }
